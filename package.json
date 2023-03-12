@@ -1,0 +1,14 @@
+{
+  "name": "alurapic",
+  "version": "1.0.0",
+  "description": "Projeto do Alura Pic com a Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Amanda Lima",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.1.1"
+  }
+}
