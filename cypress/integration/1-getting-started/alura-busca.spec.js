@@ -8,7 +8,7 @@ describe('Alura busca cursos', () => {
     cy.get('#header-barraBusca-form-campoBusca').type('Java');
     cy.get('.header-barraBusca-form-submit').click();
 
-    cy.get(':nth-child(3) > .busca-resultado-link > .busca-resultado-container > .busca-resultado-nome').should('have.text', 'Formação Aprenda a programar em Java com Orientação a Objetos');
+    cy.contains('h4.busca-resultado-nome', 'Formação Aprenda a programar em Java com Orientação a Objetos');
   })
 })
 
