@@ -46,12 +46,24 @@ describe("Formulário de Cadastro na Alura Pic ", () => {
     cy.contains("ap-vmessage", "Mininum length is 8").should("be.visible");
   });
 
-  it("Informar username inválido", () =>{
+  it("Informar username inválido | UPERCASE", () =>{
     cy.contains("a", "Register now").click();
     cy.get("h4[class=text-center]").should("have.text", "Register to embrace a new world!")
       cy.get("input[formcontrolname=userName]").type("AMANDA");
       cy.get(".btn").click();
       cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
+  })
+
+  it.only('Verificar se username está disponível para registro', () => {
+    cy.contains("a", "Register now").click();
+    cy.get("h4[class=text-center]").should(
+      "have.text",
+      "Register to embrace a new world!"
+    );
+    cy.get("input[formcontrolname=email]").type("amanda@gmail.com");
+    cy.get("input[formcontrolname=fullName]").type("tony S.");
+    cy.get("input[formcontrolname=userName]").type("tony");
+    cy.contains(".text-success", "User available").should('be.visible');
   })
 
 });
