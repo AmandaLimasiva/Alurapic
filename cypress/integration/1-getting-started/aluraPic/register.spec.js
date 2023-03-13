@@ -1,4 +1,4 @@
-describe("Alura busca cursos", () => {
+describe("Formulário de Cadastro na Alura Pic ", () => {
   beforeEach(() => {
     cy.visit("https://alura-fotos.herokuapp.com/#/home");
   });
@@ -53,4 +53,5 @@ describe("Alura busca cursos", () => {
       cy.get(".btn").click();
       cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
   })
+
 });

@@ -3,4 +3,4 @@ videos/
 apps/
 cypress.config.js
 screenshots/
-reports/
+report/
