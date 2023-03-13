@@ -45,4 +45,12 @@ describe("Alura busca cursos", () => {
     cy.get(".btn").click();
     cy.contains("ap-vmessage", "Mininum length is 8").should("be.visible");
   });
+
+  it("Informar username inválido", () =>{
+    cy.contains("a", "Register now").click();
+    cy.get("h4[class=text-center]").should("have.text", "Register to embrace a new world!")
+      cy.get("input[formcontrolname=userName]").type("AMANDA");
+      cy.get(".btn").click();
+      cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
+  })
 });
