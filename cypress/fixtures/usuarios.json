@@ -1,0 +1,22 @@
+[{
+  "email":"luke@gmail.com",
+  "fullName": "Luke Skywalker",
+  "userName": "luke",
+  "password": "123654"
+},
+
+{
+  "email":"sasuke@gmail.com",
+  "fullName": "Sasuke Uchiha",
+  "userName": "sasuke",
+  "password": "125874"
+},
+
+{
+  "email":"naruto@gmail.com",
+  "fullName": "Naruto Uzumaki",
+  "userName": "naruto",
+  "password": "125874"
+}
+
+]

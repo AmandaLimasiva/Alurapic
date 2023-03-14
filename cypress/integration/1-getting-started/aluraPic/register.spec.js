@@ -46,15 +46,18 @@ describe("Formulário de Cadastro na Alura Pic ", () => {
     cy.contains("ap-vmessage", "Mininum length is 8").should("be.visible");
   });
 
-  it("Informar username inválido | UPERCASE", () =>{
+  it("Informar username inválido | UPERCASE", () => {
     cy.contains("a", "Register now").click();
-    cy.get("h4[class=text-center]").should("have.text", "Register to embrace a new world!")
-      cy.get("input[formcontrolname=userName]").type("AMANDA");
-      cy.get(".btn").click();
-      cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
-  })
+    cy.get("h4[class=text-center]").should(
+      "have.text",
+      "Register to embrace a new world!"
+    );
+    cy.get("input[formcontrolname=userName]").type("AMANDA");
+    cy.get(".btn").click();
+    cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
+  });
 
-  it.only('Verificar se username está disponível para registro', () => {
+  it("Verificar se username está disponível para registro", () => {
     cy.contains("a", "Register now").click();
     cy.get("h4[class=text-center]").should(
       "have.text",
@@ -63,7 +66,25 @@ describe("Formulário de Cadastro na Alura Pic ", () => {
     cy.get("input[formcontrolname=email]").type("amanda@gmail.com");
     cy.get("input[formcontrolname=fullName]").type("tony S.");
     cy.get("input[formcontrolname=userName]").type("tony");
-    cy.contains(".text-success", "User available").should('be.visible');
-  })
+    cy.get(".btn").click(); //Não precisei para validar
+    cy.contains(".text-success", "User available").should("be.visible");
+  });
 
+
+
+  const usuarios = require("../../../fixtures/usuarios.json");
+  usuarios.forEach((usuario) => {
+    it.only("Registra novo usuário " + usuario.fullName, () => {
+      cy.contains("a", "Register now").click();
+      cy.get("h4[class=text-center]").should(
+        "have.text",
+        "Register to embrace a new world!"
+      );
+      cy.get("input[formcontrolname=email]").type(usuario.email);
+      cy.get("input[formcontrolname=fullName]").type(usuario.fullName);
+      cy.get("input[formcontrolname=userName]").type(usuario.userName);
+      cy.get("input[formcontrolname=password]").type(usuario.password);
+      cy.get(".btn").click(); //Não precisei para validar
+    });
+  });
 });
