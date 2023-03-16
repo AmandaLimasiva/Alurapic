@@ -46,7 +46,7 @@ describe("Formulário de Cadastro na Alura Pic ", () => {
     cy.contains("ap-vmessage", "Mininum length is 8").should("be.visible");
   });
 
-  it("Informar username inválido | UPERCASE", () => {
+  it("Informar username inválido | com UPERCASE", () => {
     cy.contains("a", "Register now").click();
     cy.get("h4[class=text-center]").should(
       "have.text",
