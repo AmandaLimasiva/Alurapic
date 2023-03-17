@@ -14,7 +14,7 @@ describe(' Procurar por fotos e dados via API', () => {
 })
 
 describe('Fazer Login por API', () => {
-  it.only('Buscar minhas fotos', () => {
+  it('Buscar minhas fotos', () => {
     cy.request({
       method:'POST',
       url:'https://apialurapic.herokuapp.com/user/login',

@@ -6,7 +6,7 @@ describe("Alura busca cursos", () => {
   });
 
   it("Realizar login de usuário válido", () => {
-    cy.login('teste_amanda', '12345678')
+    cy.login('teste_amanda', '12345678', {logs: false})
     cy.contains("a", "(Logout)").click();
     cy.get("h4[class=text-center]").should("have.text", "Login");
   });

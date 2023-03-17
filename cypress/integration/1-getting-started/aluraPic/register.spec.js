@@ -74,7 +74,7 @@ describe("Formulário de Cadastro na Alura Pic ", () => {
 
   const usuarios = require("../../../fixtures/usuarios.json");
   usuarios.forEach((usuario) => {
-    it.only("Registra novo usuário " + usuario.fullName, () => {
+    it("Registra novo usuário " + usuario.fullName, () => {
       cy.contains("a", "Register now").click();
       cy.get("h4[class=text-center]").should(
         "have.text",
