@@ -1,6 +1,6 @@
 describe("Formulário de Cadastro na Alura Pic ", () => {
   beforeEach(() => {
-    cy.visit("https://alura-fotos.herokuapp.com/#/home");
+    cy.visit('/');
   });
 
   it("Verifica mensagens de validação para campos obrigatórios", function () {

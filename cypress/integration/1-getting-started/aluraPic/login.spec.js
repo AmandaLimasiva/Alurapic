@@ -1,18 +1,29 @@
-
+//https://docs.cypress.io/guides/references/best-practices
 
 describe("Alura busca cursos", () => {
   beforeEach(() => {
-    cy.visit("https://alura-fotos.herokuapp.com/#/home");
+    cy.visit('/');
+    /*cy.intercept('POST', 'https://apialurapic.herokuapp.com/user/login', {
+      statusCode: 400
+    }).as('stubPost');*/
   });
 
   it("Realizar login de usuário válido", () => {
-    cy.login('teste_amanda', '12345678', {logs: false})
+    cy.login(Cypress.env('userName'), Cypress.env('password'))
     cy.contains("a", "(Logout)").click();
     cy.get("h4[class=text-center]").should("have.text", "Login");
   });
 
+
+  /*it("Realizar login de usuário mock", () => {
+    cy.login(Cypress.env('userName'), Cypress.env('password'))
+    //cy.wait('@stubPost')
+    cy.contains("a", "(Logout)").click();
+    cy.get("h4[class=text-center]").should("have.text", "Login");
+  });*/
+
   it("Realizar login de usuário inválido", () => {
-    cy.login('aman', '1236')
+    cy.login(Cypress.env('userName'), Cypress.env('password'))
     cy.on("window:alert", (str) => {
       expect(str).to.equal("Invalid user name or password");
     });
