@@ -13,6 +13,7 @@
 > npm (Instalação ocorre junto com o Node) <br>
 > Google Chorme <br>
 > VS Code <br>
+> Cypress.io
 
 #### Comandos do Cypress utilizados para executar os testes 💡
 
