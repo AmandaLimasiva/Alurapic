@@ -1,8 +1,6 @@
 # <h1 align="center"> AluraPic 📸</h1>
 
-<h3> Esse projeto foi criado com base no curso de Testes E2E com Cypress da Alura. Tem como finalizada além de salvar os comandos utilizados, 
-compartilhar e mostrar meus conhecimento sobre testes automatizados criados 
-com o framework Cypress aplicados na AluraPic. </h3>
+> <h4> Esse projeto foi criado com base no curso de Testes E2E com Cypress da Alura. Tem como finalidade além de salvar os comandos utilizados, compartilhar e mostrar meus conhecimento sobre testes automatizados criados com o framework Cypress aplicados na AluraPic. </h4>
 
 <br>
 <br>
